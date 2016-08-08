@@ -2,12 +2,6 @@
 
 namespace App\Providers;
 
-use App\Comment;
-use App\Events\Activities\Comments\CommentCreated;
-use App\Events\Activities\Comments\CommentDeleted;
-use App\Events\Activities\Posts\PostCreated;
-use App\Events\Activities\Posts\PostDeleted;
-use App\Post;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 

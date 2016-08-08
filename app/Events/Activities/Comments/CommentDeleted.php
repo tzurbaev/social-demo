@@ -19,8 +19,6 @@ class CommentDeleted extends Event implements ShouldBroadcast
 
     /**
      * Create a new event instance.
-     *
-     * @return void
      */
     public function __construct(Comment $comment)
     {

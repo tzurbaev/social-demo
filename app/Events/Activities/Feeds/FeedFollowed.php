@@ -28,9 +28,8 @@ class FeedFollowed extends Event implements ShouldBroadcast
     /**
      * Create a new event instance.
      *
-     * @param int $feedId
+     * @param int       $feedId
      * @param \App\User $follower
-     * @return void
      */
     public function __construct(int $feedId, User $follower)
     {

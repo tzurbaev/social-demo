@@ -7,7 +7,7 @@ use App\User;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Queue\SerializesModels;
 
-class FeedUnfollowed extends Event
+class FeedUnfollowed extends Event implements ShouldBroadcast
 {
     use SerializesModels;
 
@@ -28,9 +28,8 @@ class FeedUnfollowed extends Event
     /**
      * Create a new event instance.
      *
-     * @param int $feedId
+     * @param int       $feedId
      * @param \App\User $follower
-     * @return void
      */
     public function __construct(int $feedId, User $follower)
     {

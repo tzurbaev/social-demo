@@ -5,7 +5,6 @@ namespace App\Listeners\Activities\Stream\Feeds;
 use App\Events\Activities\Feeds\FeedUnfollowed;
 use GetStream\Stream\Client;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 
 class UnfollowFeed implements ShouldQueue
 {
@@ -20,7 +19,6 @@ class UnfollowFeed implements ShouldQueue
      * Create the event listener.
      *
      * @param \GetStream\Stream\Client $client
-     * @return void
      */
     public function __construct(Client $client)
     {
@@ -30,8 +28,7 @@ class UnfollowFeed implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param  FeedUnfollowed  $event
-     * @return void
+     * @param \App\Events\Activities\Feeds\FeedUnfollowed $event
      */
     public function handle(FeedUnfollowed $event)
     {
