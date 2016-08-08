@@ -61,9 +61,12 @@ class Comment extends Model implements EntryContract, CommentContract, AttachesC
     public function activityData(): array
     {
         return [
-            'actor' => 'user:'.$this->author_id,
+            'actor' => $this->author_id,
             'verb' => 'comment',
-            'object' => $this->commentable->commentableType().':'.$this->commentable->id,
+            'object' => $this->id,
+            'foreign_id' => 'comment:'.$this->id,
+            'commentable_id' => $this->commentable_id,
+            'commentable_type' => $this->commentable_type,
         ];
     }
 }

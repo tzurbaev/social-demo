@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('APP_TIMEZONE', 'UTC'),
 
     /*
     |--------------------------------------------------------------------------
@@ -155,7 +155,6 @@ return [
          */
         TwigBridge\ServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        GetStream\StreamLaravel\StreamLaravelServiceProvider::class,
         AlgoliaSearch\Laravel\AlgoliaServiceProvider::class,
 
         /*
@@ -165,6 +164,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\StreamServiceProvider::class,
 
     ],
 

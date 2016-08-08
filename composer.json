@@ -9,8 +9,9 @@
         "laravel/framework": "5.2.*",
         "rcrowe/twigbridge": "^0.9.2",
         "barryvdh/laravel-debugbar": "^2.2",
-        "get-stream/stream-laravel": "^2.2",
-        "algolia/algoliasearch-laravel": "^1.2"
+        "algolia/algoliasearch-laravel": "^1.2",
+        "get-stream/stream": "^2.2",
+        "pusher/pusher-php-server": "^2.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

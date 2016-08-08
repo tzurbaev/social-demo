@@ -87,9 +87,11 @@ class Post extends Model implements EntryContract, AttachesContract, Commentable
     public function activityData(): array
     {
         return [
-            'actor' => 'user:'.$this->author_id,
-            'verb' => $this->type,
-            'object' => 'post:'.$this->id,
+            'actor' => $this->author_id,
+            'verb' => 'post',
+            'object' => $this->id,
+            'foreign_id' => 'post:'.$this->id,
+            'post_type' => $this->type,
         ];
     }
 }
