@@ -13,9 +13,43 @@
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
+        'first_name' => $faker->firstname,
+        'last_name' => $faker->lastname,
         'email' => $faker->safeEmail,
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(App\City::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->city,
+    ];
+});
+
+$factory->define(App\Image::class, function (Faker\Generator $faker) {
+    return [
+        'original_filename' => $faker->sentence . '.jpg',
+        'parent_hash' => str_random(12),
+        'child_hash' => str_random(12),
+        'filename' => str_random(12),
+        'extension' => 'jpg',
+    ];
+});
+
+$factory->define(App\Video::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->sentence,
+        'description' => $faker->paragraph,
+        'provider' => $faker->randomElement(['youtube', 'vimeo']),
+        'external_id' => str_random(8),
+        'url' => $faker->url,
+        'cover_url' => $faker->url,
+    ];
+});
+
+$factory->define(App\Post::class, function (Faker\Generator $faker) {
+    return [
+        'message' => $faker->paragraph,
     ];
 });
