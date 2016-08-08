@@ -14,7 +14,7 @@ trait Comments
      */
     public function comments()
     {
-        return $this->morphToMany(Comment::class, 'commentable');
+        return $this->morphMany(Comment::class, 'commentable');
     }
 
     /**
@@ -38,6 +38,6 @@ trait Comments
      */
     public function discuss(CommentContract $comment)
     {
-        $this->comments()->attach($comment);
+        $this->comments()->save($comment);
     }
 }

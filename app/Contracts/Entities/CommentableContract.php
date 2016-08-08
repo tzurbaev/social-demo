@@ -24,4 +24,11 @@ interface CommentableContract
      * @param \App\Contracts\Entities\CommentContract $comment
      */
     public function discuss(CommentContract $comment);
+
+    /**
+     * Commentable entity type (post, image, video, etc.).
+     *
+     * @return string
+     */
+    public function commentableType(): string;
 }

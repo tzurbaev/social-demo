@@ -3,10 +3,11 @@
 namespace App;
 
 use App\Contracts\Entities\AttachableContract;
+use App\Contracts\Entities\CommentableContract;
 use App\Traits\Comments\Comments;
 use Illuminate\Database\Eloquent\Model;
 
-class Video extends Model implements AttachableContract
+class Video extends Model implements AttachableContract, CommentableContract
 {
     use Comments;
 
@@ -28,4 +29,14 @@ class Video extends Model implements AttachableContract
     protected $casts = [
         'meta_data' => 'array',
     ];
+
+    /**
+     * Commentable entity type.
+     *
+     * @return string
+     */
+    public function commentableType(): string
+    {
+        return 'image';
+    }
 }
