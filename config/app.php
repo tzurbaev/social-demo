@@ -153,7 +153,10 @@ return [
         /*
          * Package Service Providers...
          */
-
+        TwigBridge\ServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        GetStream\StreamLaravel\StreamLaravelServiceProvider::class,
+        AlgoliaSearch\Laravel\AlgoliaServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -209,6 +212,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'FeedManager' => GetStream\StreamLaravel\Facades\FeedManager::class,
     ],
 
 ];
