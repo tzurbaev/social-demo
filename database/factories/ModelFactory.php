@@ -53,3 +53,9 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
         'message' => $faker->paragraph,
     ];
 });
+
+$factory->define(App\Comment::class, function (Faker\Generator $faker) {
+    return [
+        'message' => $faker->paragraph,
+    ];
+});

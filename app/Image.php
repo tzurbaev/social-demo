@@ -3,10 +3,13 @@
 namespace App;
 
 use App\Contracts\Entities\AttachableContract;
+use App\Traits\Comments\Comments;
 use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model implements AttachableContract
 {
+    use Comments;
+
     /**
      * The attributes that are mass assignable.
      *

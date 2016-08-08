@@ -6,11 +6,13 @@ use App\Contracts\Entities\AttachableContract;
 use App\Contracts\Entities\AttachesContract;
 use App\Traits\Attachments\ImageAttachments;
 use App\Traits\Attachments\VideoAttachments;
+use App\Traits\Comments\Comments;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class Post extends Model implements AttachesContract
 {
+    use Comments;
     use ImageAttachments;
     use VideoAttachments;
 
@@ -25,6 +27,16 @@ class Post extends Model implements AttachesContract
      * @var array
      */
     protected $fillable = ['message'];
+
+    /**
+     * Post author.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function author()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     /**
      * "type" attribute accessor.
