@@ -35,6 +35,6 @@ class CreateActivity implements ShouldQueue
         $activityData = $event->activityData;
 
         $feed = $this->client->feed('user', $activityData['actor']);
-        $feed->addActivity($activityData());
+        $feed->addActivity($activityData);
     }
 }
