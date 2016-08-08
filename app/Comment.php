@@ -3,11 +3,19 @@
 namespace App;
 
 use App\Contracts\Activities\EntryContract;
+use App\Contracts\Entities\AttachesContract;
 use App\Contracts\Entities\CommentContract;
+use App\Traits\Attachments\Attachments;
+use App\Traits\Attachments\ImageAttachments;
+use App\Traits\Attachments\VideoAttachments;
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model implements EntryContract, CommentContract
+class Comment extends Model implements EntryContract, CommentContract, AttachesContract
 {
+    use Attachments;
+    use ImageAttachments;
+    use VideoAttachments;
+
     /**
      * The attributes that are mass assignable.
      *

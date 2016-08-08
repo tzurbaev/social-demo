@@ -3,9 +3,9 @@
 namespace App;
 
 use App\Contracts\Activities\EntryContract;
-use App\Contracts\Entities\AttachableContract;
 use App\Contracts\Entities\AttachesContract;
 use App\Contracts\Entities\CommentableContract;
+use App\Traits\Attachments\Attachments;
 use App\Traits\Attachments\ImageAttachments;
 use App\Traits\Attachments\VideoAttachments;
 use App\Traits\Comments\Comments;
@@ -15,6 +15,7 @@ use Illuminate\Support\Str;
 class Post extends Model implements EntryContract, AttachesContract, CommentableContract
 {
     use Comments;
+    use Attachments;
     use ImageAttachments;
     use VideoAttachments;
 
@@ -66,20 +67,6 @@ class Post extends Model implements EntryContract, AttachesContract, Commentable
         }
 
         return static::TYPE_POST;
-    }
-
-    /**
-     * Attaches entity.
-     *
-     * @param \App\Contracts\Entities\AttachableContract $entity
-     */
-    public function attach(AttachableContract $entity)
-    {
-        if ($entity instanceof Image) {
-            return $this->attachImage($entity);
-        } elseif ($entity instanceof Video) {
-            return $this->attachVideo($entity);
-        }
     }
 
     /**

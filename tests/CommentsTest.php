@@ -95,4 +95,26 @@ class CommentsTest extends TestCase
         $this->assertEquals(2, $video->commentsCount());
         $this->assertEquals($comment->id, $secondComment->replyTo()->id);
     }
+
+    /** @test */
+    function comments_can_have_attachments()
+    {
+        // Create video, create comment author, create comment.
+        // Create image, attach image to comment. Write comment on video.
+        // Assert that video's comments count equals 1.
+        // Assert that comment has attached image.
+        $author = factory(User::class)->create();
+        $video = factory(Video::class)->create();
+        $comment = factory(Comment::class)->create([
+            'author_id' => $author->id,
+            'message' => 'Commenting on Video with Image...',
+        ]);
+        $commentImage = factory(Image::class)->create();
+        $comment->attach($commentImage);
+
+        $video->discuss($comment);
+
+        $this->assertEquals(1, $video->commentsCount());
+        $this->assertEquals(1, $comment->imagesCount());
+    }
 }
