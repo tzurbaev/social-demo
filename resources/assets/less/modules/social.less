@@ -1,4 +1,16 @@
+.feed-update-section {
+  background-color: rgba(44, 138, 218, 0.22);
+  padding: 0.7em 0;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;
+}
+
 .ui.feed {
+  &.has-updates {
+    margin-top: 0.1em;
+  }
+
   .event {
     padding: .6em;
     border-radius: 2px;
@@ -14,5 +26,17 @@
     &:last-child {
       padding-bottom: .6em;
     }
+
+    .content {
+      .extra.text {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.feed-page {
+  .feed-header {
+    margin-bottom: 1.4em;
   }
 }

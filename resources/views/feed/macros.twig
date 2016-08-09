@@ -1,0 +1,50 @@
+{% macro renderFeed() %}
+<div class="feed-update-section">
+  <h4 class="ui header">Show 2 Updates</h4>
+</div>
+<div class="ui large feed">
+  {{ _self.renderFeedEntry() }}
+  {{ _self.renderFeedEntry() }}
+  {{ _self.renderFeedEntry() }}
+</div>
+{% endmacro %}
+
+{% macro renderFeedEntry() %}
+  <div class="event">
+    <div class="label">
+      <img src="https://pp.vk.me/c421124/u13133334/e_13d36e5e.jpg" alt="">
+    </div>
+    <div class="content">
+      <div class="summary">
+        <a href="javascript:;" class="user">Timur Zurbaev</a> posted a photo
+        <div class="date">1 Hour Ago</div>
+      </div>
+      <div class="extra text">
+        Ours is a life of constant reruns. We're always circling back to where we'd we started, then starting all over again. Even if we don't run extra laps that day, we surely will come back for more of the same another day soon.
+      </div>
+      <div class="extra images">
+        <img src="http://semantic-ui.com/images/wireframe/image.png" alt="">
+        <img src="http://semantic-ui.com/images/wireframe/image.png" alt="">
+      </div>
+      <div class="meta">
+        <a href="javascript:;" class="like"><i class="like icon"></i> 4 Likes</a>
+      </div>
+      <h3 class="ui dividing header">Comments</h3>
+      <div class="ui comments">
+        <div class="comment">
+          <a href="javascript:;" class="avatar"><img src="https://pp.vk.me/c421124/u13133334/e_13d36e5e.jpg" alt=""></a>
+          <div class="content">
+            <a href="javascript:;" class="author">Timur Zurbaev</a>
+            <div class="metadata">
+              <span class="date">Today at 5:42PM</span>
+            </div>
+            <div class="text">How Artistic!</div>
+          </div>
+          <div class="actions">
+            <a href="javascript:;" class="reply">Reply</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

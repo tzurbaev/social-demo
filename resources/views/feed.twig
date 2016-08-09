@@ -1,0 +1,15 @@
+{% extends "layouts.social" %}
+
+{% block content %}
+  {% import "feed.macros" as feedMacros %}
+  <div class="ui main container feed-page">
+    <div class="ui grid">
+      <div class="two wide column"></div>
+      <div class="twelve wide column">
+        <h2 class="ui header feed-header">Feed</h2>
+        {{ feedMacros.renderFeed() }}
+      </div>
+      <div class="two wide column"></div>
+    </div>
+  </div>
+{% endblock %}

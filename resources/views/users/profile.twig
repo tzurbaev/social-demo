@@ -1,0 +1,41 @@
+{% extends "layouts.social" %}
+
+{% block content %}
+  {% import "feed.macros" as feedMacros %}
+  <div class="ui main container profile-page">
+    <div class="ui grid">
+      <div class="four wide column">
+        <div class="ui cards">
+          <div class="card">
+            <div class="image">
+              <img src="https://pp.vk.me/c421124/v421124334/45c/qEe_d7NmTek.jpg" alt="" class="ui rounded image">
+            </div>
+            <div class="content">
+              <div class="header">Timur Zurbaev</div>
+              <div class="meta">Following</div>
+              <div class="description">
+                24yo, Ulan-Ude
+              </div>
+            </div>
+            <div class="extra content">
+              <span class="right floated">
+                <i class="user icon"></i> 25 Following
+              </span>
+              <span>
+                <i class="user icon"></i> 75 Followers
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="profile-action-buttons">
+          {# <button class="ui positive basic button"><i class="add user icon"></i> Follow</button> #}
+          <button class="ui orange basic button"><i class="remove user icon"></i> Unfollow</button>
+          <button class="ui negative basic button"><i class="ban icon"></i> Block</button>
+        </div>
+      </div>
+      <div class="twelve wide column">
+        {{ feedMacros.renderFeed() }}
+      </div>
+    </div>
+  </div>
+{% endblock %}
