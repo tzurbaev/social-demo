@@ -28,13 +28,13 @@
           </div>
         </div>
         <div class="profile-action-buttons">
-          {# <button class="ui positive basic button"><i class="add user icon"></i> Follow</button> #}
-          <button class="ui orange basic button"><i class="remove user icon"></i> Unfollow</button>
-          <button class="ui negative basic button"><i class="ban icon"></i> Block</button>
+          {# <button class="ui positive button"><i class="add user icon"></i> Follow</button> #}
+          <button class="ui primary button"><i class="remove user icon"></i> Unfollow</button>
+          <button class="ui negative button"><i class="ban icon"></i> Block</button>
         </div>
       </div>
       <div class="twelve wide column">
-        {{ feedMacros.renderFeed() }}
+        {{ feedMacros.renderFeed(true) }}
       </div>
     </div>
   </div>

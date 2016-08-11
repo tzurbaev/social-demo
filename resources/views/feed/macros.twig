@@ -1,12 +1,49 @@
-{% macro renderFeed() %}
-<div class="feed-update-section">
-  <h4 class="ui header">Show 2 Updates</h4>
-</div>
-<div class="ui large feed">
-  {{ _self.renderFeedEntry() }}
-  {{ _self.renderFeedEntry() }}
-  {{ _self.renderFeedEntry() }}
-</div>
+{% macro renderFeed(isProfile) %}
+  {% if not (isProfile) %}
+  <div class="feed-update-section">
+    <h4 class="ui header">Show 2 Updates</h4>
+  </div>
+  {% else %}
+    {{ _self.renderPostForm() }}
+  {% endif %}
+  <div class="ui large feed">
+    {{ _self.renderFeedEntry() }}
+    {{ _self.renderFeedEntry() }}
+    {{ _self.renderFeedEntry() }}
+  </div>
+{% endmacro %}
+
+{% macro renderPostForm() %}
+  <div class="ui form">
+    <div class="field">
+      <label for="post-message-input">Have something to share?</label>
+      <textarea id="post-message-input" rows="2" placeholder="Write something..."></textarea>
+    </div>
+    <h5 class="ui header">Attached Files</h5>
+    <div class="ui grid">
+      <div class="sixteen wide column">
+        <div class="ui tiny images">
+          <a href="javascript:;" class="ui image" data-tooltip="Click to remove" data-position="top center" data-inverted="">
+            <img src="http://semantic-ui.com/images/wireframe/image.png" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="ui divider"></div>
+    <div class="ui grid">
+      <div class="eight wide column">
+        <button class="ui icon primary button" data-inverted data-tooltip="Attach Images" data-position="top center">
+          <i class="photo icon"></i>
+        </button>
+        <button class="ui icon primary button" data-inverted data-tooltip="Attach Videos" data-position="top center">
+          <i class="video icon"></i>
+        </button>
+      </div>
+      <div class="eight wide column text-right">
+        <button class="ui positive button" type="button">Send</button>
+      </div>
+    </div>
+  </div>
 {% endmacro %}
 
 {% macro renderFeedEntry() %}
